@@ -4,8 +4,7 @@ const cache = new NodeCache({ stdTTL: 5 * 60 })
 
 exports.getMovies = async (req, res) => {
     try {
-        let reqData = Object.assign({}, req.body);
-        let criteria = reqData['searchTerm']
+        let criteria = req.query['keyword']
         let cachedMovies = cache.get(criteria)
 
         if (cachedMovies) {

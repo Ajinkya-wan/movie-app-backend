@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
 // app.use('/', indexRouter);
-app.use('/getMovies', moviesSearch);
+app.use('/', moviesSearch);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
